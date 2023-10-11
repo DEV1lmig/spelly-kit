@@ -1,27 +1,6 @@
 <script>
   /** @type {import('./$types').LayoutData} */
     import "../app.postcss";
-	  import { onMount } from 'svelte';
-    import { invalidate } from '$app/navigation'
-
-    export let data
-
-    let { supabase, session } = data
-    $: ({ supabase, session } = data)
-
-    onMount(() => {
-		const {
-			data: { subscription }
-		} = supabaseClient.auth.onAuthStateChange((event, _session) => {
-      if (_session?.expires_at !== session?.expires_at) {
-        invalidate('supabase:auth')
-      }
-		});
-
-		return () => {
-			subscription.unsubscribe();
-		};
-	});
 </script>
 <header class="pb-2">
     <div class="navbar rounded-b-lg bg-slate-800">

@@ -1,13 +1,36 @@
-import { redirect } from '@sveltejs/kit'
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-unsafe-finally */
+import { redirect } from '@sveltejs/kit';
 
-/** @type {import('./$types').PageServerLoad} */
-export async function load({ url, locals: { getSession } }) {
-	const session = await getSession()
+export const actions = {
+    login: async({cookies,request,locals})=>{
 
-  // if the user is already logged in return them to the account page
-  if (session) {
-    throw redirect(303, '/spelly')
-  }
+        const loginFormData = await request.formData();
+        const email = loginFormData.get('email')?.toString()??'';
+        const password = loginFormData.get('password')?.toString()??'';
 
-  return { url: url.origin }
-};
+        let loginResponse={
+            email,
+            error: true,
+            message: '',
+        }
+
+        try{
+            await locals.userPb.collection('users').authWithPassword(
+                email,
+                password
+            );
+            //console.log('auth store',locals.pb.authStore);
+ 
+            
+            if(locals.userPb.authStore.baseToken) throw redirect(303,'/spelly')
+        }
+        finally{
+            if(!locals.userPb.authStore.baseToken) return loginResponse
+        }
+
+
+        
+    },
+
+}
