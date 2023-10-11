@@ -10,7 +10,7 @@ export const GET = async ({ url }) => {
     prompt: `this is a spell check generator. It can't recieve offensive languege, (racism, xenofobia and religion)
     --
     If the sample received contains: "niga, something xenofobic or religious offensive"
-    you will display: "Don't use offensive words"
+    you will display: "No uses ninguna palabra ofensiva"
     --
     Ultimetly, show me only the response, without any punctation mark added.
     --
