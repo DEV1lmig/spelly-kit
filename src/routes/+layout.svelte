@@ -1,7 +1,10 @@
 <script>
   /** @type {import('./$types').LayoutData} */
+    import ViewTransition from './navigation.svelte'
     import "../app.postcss";
 </script>
+
+<ViewTransition />
 <header class="pb-2">
     <div class="navbar rounded-b-lg bg-slate-800">
         <div class="flex-1">
