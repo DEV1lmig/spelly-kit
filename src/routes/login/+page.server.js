@@ -21,6 +21,7 @@ export const actions = {
 				throw redirect(303, '/auth')
 			}
 			if (locals.userPb.authStore.baseToken) throw redirect(303, '/spelly');
+			if (!locals.userPb.authStore.isValid) throw redirect(303, '/landingpage')
 		} finally {
 			if (!locals.userPb.authStore.baseToken) return loginResponse;
 		}
