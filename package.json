@@ -27,6 +27,7 @@
 	"type": "module",
 	"dependencies": {
 		"cohere-ai": "^6.2.2",
-		"pocketbase": "^0.18.2"
+		"pocketbase": "^0.18.2",
+		"svelte-hero-icons": "^5.0.0"
 	}
 }
