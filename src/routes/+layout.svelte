@@ -31,8 +31,9 @@
               </label>
               <!-- svelte-ignore a11y-no-noninteractive-tabindex -->
               <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-slate-800 rounded-box w-52">
-                <li><a href="/my/settings">Settings</a></li>
-                <li><a data-sveltekit-reload href="/logout">Logout</a></li>
+                <li><a href="/my/settings">Ajuste</a></li>
+                <li><a href="/my/corrections">Mis correciones</a></li>
+                <li><a data-sveltekit-reload href="/logout">Cerrar sesion</a></li>
               </ul>
             </div>
         {/if}
