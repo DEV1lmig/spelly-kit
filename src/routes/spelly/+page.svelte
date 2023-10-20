@@ -15,8 +15,8 @@
 </script>
 
 <main class="container max-w-xs lg:max-w-xl md:max-w-lg w-auto m-auto flex flex-col h-auto">
-  <div class="rounded-lg bg-violet-500 flex flex-col p-10 gap-4 h-auto">
-    <div class="text-slate-50 gap-4 items-center">
+  <div class="rounded-lg bg-gray-400 flex flex-col p-10 gap-4 h-auto backdrop-filter backdrop-blur-md bg-opacity-40 bg-clip-padding">
+    <div class="gap-4 items-center">
       <h1 class="text-md md:text-lg lg:text-2xl font-bold">Bienvenido a Spelly</h1>
       <p class="text-sm md:text-md lg:text-lg font-medium">Aqui puedes verificar tus dudas con el idioma ingles, solo tienes que introducir el texto que creas que no es correcto y nostros nos encargaremos de mostrarte el resultado correcto.</p>
     </div>
