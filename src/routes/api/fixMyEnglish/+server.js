@@ -15,7 +15,7 @@ export const GET = async ({ url }) => {
     You have to be aware of todays slang in the united states and united kingdom, aware of memes and the way young and older people talk.
     Be aware that words like bro, lad, pal, homie, are english slang, therefore they are words.
     --
-    Words that were spelled badly like anoying for "annoying" or mai for "my" are the kind of mispelled words that resamble english.
+    Words that were spelled badly like anoying for "annoying", mai for "my" bru for "bro", vlu or vlue for "blue", etc are the kind of mispelled words that resamble english therefor it can be corrected.
     --
     If your receive words that doesn't resamble english just throw a message that says "No entendi lo que me quisiste decir, ¿podrias intentar ser mas especifico?"
     --
