@@ -37,7 +37,7 @@
 	};
 </script>
 
-<div>
+<div class="h-[100vh]">
 	<form
 		action="?/updateProfile"
 		method="POST"

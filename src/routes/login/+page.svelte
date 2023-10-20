@@ -6,8 +6,8 @@
 	let email;
 </script>
 
-<div class="flex flex-col items-center h-full w-full">
-	<h2 class="mt-2 text-center text-3xl font-bold tracking-tight text-base-content">
+<div class="flex flex-col m-auto h-[100vh] justify-center items-center">
+	<h2 class="mt-2 text-center text-3xl font-bold tracking-tight">
 		Login to your account
 	</h2>
 	<p class="text-center mt-1">
@@ -15,7 +15,7 @@
 			>register</a
 		> if you don't already have an account.
 	</p>
-	<form bind:this={thisForm} action="?/login" method="POST" class="flex flex-col items-center space-y-2 w-full pt-4">
+	<form bind:this={thisForm} action="?/login" method="POST" class="flex flex-col items-center space-y-2 w-full pt-4 h-[70vh]">
 		<div class="form-control w-full max-w-md">
 			<label for="email" class="label font-medium pb-1">
 				<span class="label-text">Email</span>

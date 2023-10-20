@@ -28,6 +28,7 @@
 	"dependencies": {
 		"cohere-ai": "^6.2.2",
 		"pocketbase": "^0.18.2",
-		"svelte-hero-icons": "^5.0.0"
+		"svelte-hero-icons": "^5.0.0",
+		"theme-change": "^2.5.0"
 	}
 }
