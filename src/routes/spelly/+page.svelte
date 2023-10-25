@@ -34,7 +34,7 @@
               <label for="content">Respuesta correcta</label>
             </div>
             <div class="max-w-max hero-content">
-              <textarea class="ml-4 rounded bg-error resize-none text-gray-900 lg:textarea-lg xl:textarea-2xl md:textarea-md overflow-auto text-md/6" readonly placeholder="">{input ? `${input}` : ''}</textarea>
+              <textarea class="ml-4 rounded bg-error min-w-min max-w-max resize-none text-gray-900 lg:textarea-lg xl:textarea-2xl md:textarea-md overflow-auto text-md/6" readonly placeholder="">{input ? `${input}` : ''}</textarea>
               <label for="">Respuesta incorrecta</label>
             </div>
           </div>

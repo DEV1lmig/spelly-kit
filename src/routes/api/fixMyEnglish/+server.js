@@ -17,8 +17,6 @@ export const GET = async ({ url }) => {
     --
     Words that were spelled badly like anoying for "annoying", mai for "my" bru for "bro", vlu or vlue for "blue", etc are the kind of mispelled words that resamble english therefor it can be corrected.
     --
-    If your receive words that doesn't resamble english just throw a message that says "No entendi lo que me quisiste decir, ¿podrias intentar ser mas especifico?"
-    --
     Ultimetly, show me only the response, without any punctation mark added.
     --
     Incorrect sample: "I are good."
@@ -51,8 +49,8 @@ export const GET = async ({ url }) => {
     Incorrect sample: "${input}"
     Correct sample:
     `,
-    max_tokens: 50,
-    temperature: 0.3,
+    max_tokens: 70,
+    temperature: 0.5,
     k: 0,
     p: 1,
     stop_sequences: ["--"],
