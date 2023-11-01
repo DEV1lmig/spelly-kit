@@ -1,29 +1,36 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable no-unsafe-finally */
-import { redirect } from '@sveltejs/kit';
+import { error, fail, redirect } from "@sveltejs/kit";
+import { validateData } from "$lib/utils";
+import { loginUserSchema } from "$lib/schemas";
 
 export const actions = {
-	login: async ({ cookies, request, locals }) => {
-		const loginFormData = await request.formData();
-		const email = loginFormData.get('email')?.toString() ?? '';
-		const password = loginFormData.get('password')?.toString() ?? '';
+	login: async ({ request, locals }) => {
+		const { formData, errors } = await validateData(
+			await request.formData(),
+			loginUserSchema,
+		);
 
-		let loginResponse = {
-			email,
-			error: true,
-			message: ''
-		};
+		if (errors) {
+			return fail(400, {
+				data: formData,
+				errors: errors.fieldErrors,
+			});
+		}
 
 		try {
-			await locals.userPb.collection('users').authWithPassword(email, password);
-			//console.log('auth store',locals.pb.authStore);
-			if (!locals.userPb?.authStore?.model?.verified){
-				throw redirect(303, '/auth')
+			await locals.userPb
+				.collection("users")
+				.authWithPassword(formData.email, formData.password);
+			if (!locals.userPb?.authStore?.model?.verified) {
+				locals.userPb.authStore.clear();
+				return {
+					notVerified: true,
+				};
 			}
-			if (locals.userPb.authStore.baseToken) throw redirect(303, '/spelly');
-			if (!locals.userPb.authStore.isValid) throw redirect(303, '/landingpage')
-		} finally {
-			if (!locals.userPb.authStore.baseToken) return loginResponse;
+		} catch (err) {
+			console.log("Error: ", err);
+			throw error(err.status, err.message);
 		}
-	}
+
+		throw redirect(303, "/");
+	},
 };

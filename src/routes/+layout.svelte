@@ -20,10 +20,10 @@
 		<div class="flex-1">
 			<a href="/" class="btn btn-ghost normal-case text-2xl font-bold">Spelly</a>
 		</div>
-		{#if !data.user}
+		{#if !data.user?.verified}
 			<div class="dropdown dropdown-end">
-				<a href="/login" class="btn btn-primary">Login</a>
-				<a href="/register" class="btn btn-secondary">Register</a>
+				<a href="/login" class="btn btn-primary">Iniciar sesion</a>
+				<a href="/register" class="btn btn-secondary">Registrarse</a>
 			</div>
       🌞
       <div class="inline-block w-10">
@@ -51,7 +51,7 @@
 				<!-- svelte-ignore a11y-no-noninteractive-tabindex -->
 				<ul
 					tabindex="0"
-					class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-violet-500 rounded-box w-52"
+					class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
 				>
 					<li><a href="/my/settings">Ajuste</a></li>
 					<li><a href="/my/corrections">Mis correciones</a></li>
