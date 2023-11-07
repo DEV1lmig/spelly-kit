@@ -16,7 +16,7 @@
 
 <ViewTransition />
 <header>
-	<div class="navbar shadow-sm rounded-2xl">
+	<div class="navbar fixed shadow-sm rounded-2xl">
 		<div class="flex-1">
 			<a href="/" class="btn btn-ghost normal-case text-2xl font-bold">Spelly</a>
 		</div>
