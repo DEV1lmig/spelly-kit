@@ -11,7 +11,7 @@ export const actions = {
 			};
 		} catch (err) {
 			console.log('Error: ', err);
-			throw error(500, 'Something went wrong');
+			error(500, 'Something went wrong');
 		}
 	}
 };

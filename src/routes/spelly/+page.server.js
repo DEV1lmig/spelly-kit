@@ -3,7 +3,7 @@ import { error, redirect } from '@sveltejs/kit';
 
 export async function load({ locals }) {
     if (!locals.userPb.authStore.isValid){
-        throw redirect(303, '/login')
+        redirect(303, '/login');
     }
 };
 
@@ -18,7 +18,7 @@ export const actions = {
             await locals.userPb.collection('corrections').create(formData)
         } catch (err) {
             console.log('Error:', err)
-            throw error(err.status, err.message)
+            error(err.status, err.message);
         }   
     }
 }

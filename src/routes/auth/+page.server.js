@@ -7,6 +7,6 @@ export const actions={
         const email = locals.userPb.authStore.model.email;
         const res = await locals.userPb.collection('users').requestVerification(email)
         
-        if(res) throw redirect(303, '/login')
+        if(res) redirect(303, '/login');
     }
 }

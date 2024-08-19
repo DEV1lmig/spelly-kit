@@ -16,15 +16,15 @@
 
 <ViewTransition />
 <header>
-	<div class="navbar fixed shadow-sm rounded-2xl">
+	<div class="navbar fixed shadow-sm rounded-2xl w-full">
 		<div class="flex-1">
 			<a href="/" class="btn btn-ghost normal-case text-2xl font-bold">Spelly</a>
 		</div>
 		{#if !data.user?.verified}
-			<div class="dropdown dropdown-end">
-				<a href="/login" class="btn btn-primary">Iniciar sesion</a>
-				<a href="/register" class="btn btn-secondary">Registrarse</a>
-			</div>
+		<div class="flex flex-row w-full justify-end gap-2">
+			<a href="/login" class="btn btn-primary md:w-auto w-20"><span class="md:text-sm text-xs font-bold truncate">Iniciar sesion</span></a>
+			<a href="/register" class="btn btn-secondary md:w-auto w-20"><span class="md:text-sm text-xs font-bold truncate">Registrarse</span></a>
+	</div>
       🌞
       <div class="inline-block w-10">
         <span data-toggle-theme="darkspelly" data-act-class="pl-4" class="border rounded-full border-green-700 flex items-center cursor-pointer w-10 transition-all duration-300 ease-in-out pl-0">
@@ -73,5 +73,3 @@
 	<slot />
 </main>
 
-<style>
-</style>

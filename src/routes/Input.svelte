@@ -10,7 +10,7 @@
 	export let errors;
 </script>
 
-<div class="form-control w-full max-w-lg mb-2">
+<div class="form-control w-full max-w-lg mb-2 px-4">
 	<label for={id} class="label font-medium pb-1">
 		<span class="label-text">{label}</span>
 	</label>
