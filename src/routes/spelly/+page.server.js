@@ -1,24 +1,26 @@
 /** @type {import('./$types').PageServerLoad} */
 import { error, redirect } from '@sveltejs/kit';
 
-export async function load({ locals }) {
-    if (!locals.userPb.authStore.isValid){
+export async function load({ locals: user }) {
+    if (!user){
         redirect(303, '/login');
     }
 };
 
 export const actions = {
-    saveCorrection: async ({ request, locals }) => {
+    saveCorrection: async ({ request, locals: { user, supabase } }) => {
         const formData = await request.formData()
-        
+        const content = formData.get('content')
         console.log(formData)
 
-        formData.append('user', locals.user.id)
-        try {
-            await locals.userPb.collection('corrections').create(formData)
-        } catch (err) {
-            console.log('Error:', err)
-            error(err.status, err.message);
-        }   
+
+        const { error } = await supabase.from('corrections').inser({
+            content, user: user.id
+        })
+
+        if (error){
+            console.log('Error saving correction: ', error)
+            error(error.status, error.message)
+        }
     }
 }

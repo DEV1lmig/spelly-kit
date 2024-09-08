@@ -3,7 +3,6 @@
 	import { toast } from 'svelte-french-toast';
 	import Input from '../Input.svelte';
 
-	console.log(action.searchParams.get('provider'));
 	let loading = false;
 	let form;
 

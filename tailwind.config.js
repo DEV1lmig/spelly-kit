@@ -2,7 +2,14 @@
 export default {
 	content: ['./src/**/*.{html,js,svelte,ts}'],
 	theme: {
-		extend: {}
+		extend: {
+            colors: {
+                'light-gradient-start': 'rgba(255, 255, 255, 0.1)',
+                'light-gradient-end': 'transparent',
+                'dark-gradient-start': 'rgba(0, 0, 0, 0.1)',
+                'dark-gradient-end': 'transparent'
+            }
+        }
 	},
 	daisyui: {
 		themes: [

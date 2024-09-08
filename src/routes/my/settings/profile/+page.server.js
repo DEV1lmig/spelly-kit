@@ -1,58 +1,35 @@
 import { error } from '@sveltejs/kit';
-import { supabase } from '$lib/supabaseClient';
+import { PUBLIC_SUPABASE_URL } from '$env/static/public';
+import { serializeNonPOJOs } from '$lib/utils';
+
+export const load = async ({ locals: { user, supabase } }) => {
+	if (!user) {
+		redirect(303, '/login');
+	}
+	return { user };
+}
 
 export const actions = {
-    updateProfile: async ({ request, locals }) => {
-        let data = await request.formData();
-        const userAvatar = data.get('avatar');
+	updateProfile: async ({ request, locals: { user, supabase } }) => {
+		const formData = await request.formData();
+		const username = formData.get('username');
+		const avatar = formData.get('avatar');
+        /*https://jylljpjuknljxtgiuhgh.supabase.co/storage/v1/object/public/avatars/e1e5c7a72eeaa9bab3c2ea995527d765.jpg?t=2024-08-24T16%3A24%3A25.183Z*/
+		const avatarUrl = avatar.name;
+        const publicUrl = `${PUBLIC_SUPABASE_URL}/storage/v1/object/public/avatars/${avatarUrl}`;
 
-        if (userAvatar.size === 0) {
-            data.delete('avatar');
-        }
+			const { updateData, error: updateError } = await supabase.auth.updateUser({
+				data: {
+					username: username,
+				}
+			});
+            console.log(updateData);
+			if (updateError) throw updateError;
 
-				const updates = {
-					id: locals?.user?.id,
-					username: data.get('username')
-			};
-			
-			try {
-					if (userAvatar.size > 0) {
-							const { data: storageData, error: storageError } = await supabase
-									.storage
-									.from('avatars')
-									.upload(`public/${locals.user.id}/${userAvatar.name}`, userAvatar, {
-											cacheControl: '3600',
-											upsert: true
-									});
-			
-							if (storageError) {
-									throw storageError;
-							}
-			
-							const avatarUrl = supabase.storage.from('avatars').getPublicUrl(storageData.path).publicURL;
-							updates.avatar_url = avatarUrl;
-					}
-			
-					const { data: updatedUser, error: updateError } = await supabase
-							.from('users')
-							.update(updates)
-							.eq('id', locals?.user?.id)
-							.single();
-			
-					if (updateError) {
-							throw updateError;
-					}
-			
-					locals.user.username = updatedUser.username;
-					locals.user.avatar_url = updatedUser.avatar_url;
-			} catch (err) {
-					console.log('Error: ', err);
-			
-					error(400, 'Something went wrong updating your profile');
-			}
-			
 			return {
-					success: true
-			};
-    }
-};
+				success: true,
+				userName: username,
+				avatarUrl: publicUrl
+			}
+		}
+	}

@@ -1,16 +1,15 @@
 import { redirect } from '@sveltejs/kit';
-import { supabase } from '$lib/supabaseClient';
 
-export async function load({ locals }) {
-    // Sign out the user from Supabase
-    const { error } = await supabase.auth.signOut();
+export async function load({ locals: { supabase, safeGetSession } }) {
+	const { session } = await safeGetSession();
 
-    if (error) {
-        console.log('Error signing out: ', error);
-    }
+	if (session) {
+		const { error } = await supabase.auth.signOut();
 
-    // Clear the user from locals
-    locals.user = null;
-
-    redirect(303, '/login');
+		if (error) {
+			console.log('Error signing out: ', error);
+		} else {
+			redirect(303, '/login');
+		}
+	}
 }
