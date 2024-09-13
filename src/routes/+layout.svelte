@@ -69,9 +69,7 @@
 		{/if}
 	</div>
 </header>
-<main class="container max-w-lg h-auto m-auto flex flex-col">
 	<slot />
-</main>
 
 <style>
 </style>
