@@ -16,6 +16,8 @@ export default {
 
 					neutral: '#201826',
 
+                    'card': '#F0ABFC',
+
 					'base-100': '#e3e6e8',
 
 					info: '#58c2da',
@@ -34,6 +36,8 @@ export default {
 					accent: '#1d6493',
 
 					neutral: '#312235',
+
+                    'card': '#500724',
 
 					'base-100': '#45364e',
 
