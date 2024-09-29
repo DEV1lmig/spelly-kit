@@ -2,43 +2,45 @@
 	export let form;
 </script>
 
-<div class="flex flex-col items-center h-full w-full">
-	<h2 class="mt-2 text-center text-3xl font-bold tracking-tight text-base-content">
-		Restablecer contraseña
-	</h2>
-	<p class="text-center mt-1">Te enviaremos un correo con un link para que puedas restablecer tu contraseña</p>
-	<form
-		action="?/resetPassword"
-		method="POST"
-		class="flex flex-col items-center space-y-2 w-full pt-4"
-	>
-		<div class="form-control w-full max-w-md">
-			<label for="email" class="label font-medium pb-1">
-				<span class="label-text">Correo</span>
-			</label>
-			<input type="email" name="email" class="input input-bordered w-full max-w-md" />
-		</div>
-		<div class="w-full max-w-md pt-2">
-			<button type="submit" class="btn btn-primary w-full">Restablecer</button>
-		</div>
-		{#if form?.success}
-			<div class="alert alert-success shadow-lg w-full max-w-md">
-				<div>
-					<svg
-						xmlns="http://www.w3.org/2000/svg"
-						class="stroke-current flex-shrink-0 h-6 w-6"
-						fill="none"
-						viewBox="0 0 24 24"
-						><path
-							stroke-linecap="round"
-							stroke-linejoin="round"
-							stroke-width="2"
-							d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-						/></svg
-					>
-					<span>Se ha enviado un email a tu correo con los pasos a seguir.</span>
-				</div>
-			</div>
-		{/if}
-	</form>
-</div>
+<main class="flex flex-col items-center h-full w-full">
+    <div class="my-24 flex flex-col items-center space-y-4 w-auto p-4 max-w-md">
+        <h2 class="mt-2 text-center text-3xl font-bold tracking-tight text-base-content">
+            Restablecer contraseña
+        </h2>
+        <p class="text-center mt-1">Te enviaremos un correo con un link para que puedas restablecer tu contraseña</p>
+        <form
+            action="?/resetPassword"
+            method="POST"
+            class="flex flex-col items-center space-y-2 w-full pt-4"
+        >
+            <div class="form-control w-full max-w-md">
+                <label for="email" class="label font-medium pb-1">
+                    <span class="label-text">Correo</span>
+                </label>
+                <input type="email" name="email" class="input input-bordered w-full max-w-md" />
+            </div>
+            <div class="w-full max-w-md pt-2">
+                <button type="submit" class="btn btn-primary w-full">Restablecer</button>
+            </div>
+            {#if form?.success}
+                <div class="alert alert-success shadow-lg w-full max-w-md">
+                    <div>
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            class="stroke-current flex-shrink-0 h-6 w-6"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            ><path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                            /></svg
+                        >
+                        <span>Se ha enviado un email a tu correo con los pasos a seguir.</span>
+                    </div>
+                </div>
+            {/if}
+        </form>
+    </div>
+</main>

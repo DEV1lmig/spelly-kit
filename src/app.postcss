@@ -2,25 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Minimalist, futuristic styles */
+
 body {
-  font-family: 'Inter', sans-serif; /* A modern, geometric font */
+  font-family: 'Inter', sans-serif;
   background: linear-gradient(to bottom, var(--gradient-start), var(--gradient-end)), var(--base-100);
   transition: background 0.3s ease; /* Smooth transitions for theme changes */
 }
 
-/* Subtle hover effect for buttons */
+
 .btn:hover {
   transform: translateY(-2px);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 :root {
-  --gradient-start: rgba(0, 0, 0, 0.1); /* Subtle dark gradient for light theme */
+  --gradient-start: rgba(0, 0, 0, 0.1);
   --gradient-end: transparent;
 }
 
-[data-theme="darkspelly"] {
-  --gradient-start: rgba(255, 255, 255, 0.1); /* Subtle light gradient for dark theme */
+[data-theme="dark"] {
+  --gradient-start: rgba(255, 255, 255, 0.1);
   --gradient-end: transparent;
 }

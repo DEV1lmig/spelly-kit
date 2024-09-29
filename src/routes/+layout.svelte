@@ -22,11 +22,11 @@
 			<a href="/" class="btn btn-ghost normal-case text-2xl font-bold">Spelly</a>
 		</div>
 		{#if !data.user?.verified}
-			<div class="dropdown dropdown-end">
-				<a href="/login" class="btn btn-primary rounded-full">Iniciar sesion</a>
-				<a href="/register" class="btn btn-secondary rounded-full ml-2">Registrarse</a>
+			<div class="dropdown dropdown-end flex flex-1 md:justify-end">
+				<a href="/login" class="btn w-auto text-xs md:text-lg btn-primary rounded-full">Iniciar sesion</a>
+				<a href="/register" class="btn text-xs w-auto btn-secondary rounded-full ml-2 md:text-lg">Registrarse</a>
 			</div>
-			<div class="dropdown dropdown-end ml-2">
+			<div class="dropdown dropdown-end ml-10 md:ml-2">
 				<button tabindex="0" class="btn btn-ghost btn-circle">
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
@@ -43,9 +43,6 @@
 						/>
 					</svg>
 				</button>
-				<ul class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
-					<!-- your dropdown content here -->
-				</ul>
 				<ul
 					class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
 				>

@@ -70,8 +70,8 @@
         <h2 class="text-2xl font-bold text-primary mb-4">Corrections</h2>
 
         {#if corrections.length === 0}
-          <div class="flex flex-col items-center justify-center h-full p-8 bg-gray-100 rounded-lg">
-            <p class="text-center text-2xl text-gray-600">No corrections yet...</p>
+          <div class="flex flex-col items-center justify-center h-auto p-8 bg-base-100 rounded-lg">
+            <p class="text-center text-2xl text-gray-600">Sin correciones aún</p>
           </div>
         {:else}
           <div class="flex flex-col items-center">
