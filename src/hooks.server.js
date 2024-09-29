@@ -1,9 +1,16 @@
 import PocketBase from 'pocketbase';
 import { SECRET_EMAIL, SECRET_PASSWORD } from '$env/static/private';
+import { locale } from 'svelte-i18n';
 
 export const handle = async ({ event, resolve }) => {
+
 	const adminPb = new PocketBase('https://spelly.pockethost.io');
 	const userPb = new PocketBase('https://spelly.pockethost.io');
+
+    const lang = event.request.headers.get('accept-language')?.split(',')[0]
+	if (lang) {
+		locale.set(lang)
+	}
 
 	await adminPb.admins.authWithPassword(SECRET_EMAIL, SECRET_PASSWORD);
 	event.locals.adminPb = adminPb;

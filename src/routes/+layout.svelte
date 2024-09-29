@@ -2,6 +2,7 @@
 	/** @type {import('./$types').LayoutData} */
 	import { getImageURL } from './../lib/utils.js';
 	import ViewTransition from '$lib/components/navigation.svelte';
+    import { _ } from 'svelte-i18n'
 	import '../app.postcss';
 	export let data;
     import toast, { Toaster } from 'svelte-french-toast';
@@ -23,8 +24,8 @@
 		</div>
 		{#if !data.user?.verified}
 			<div class="dropdown dropdown-end flex flex-1 md:justify-end">
-				<a href="/login" class="btn w-auto text-xs md:text-lg btn-primary rounded-full">Iniciar sesion</a>
-				<a href="/register" class="btn text-xs w-auto btn-secondary rounded-full ml-2 md:text-lg">Registrarse</a>
+				<a href="/login" class="btn w-auto text-xs md:text-lg btn-primary rounded-full">{$_('login')}</a>
+				<a href="/register" class="btn text-xs w-auto btn-secondary rounded-full ml-2 md:text-lg">{$_('register')}</a>
 			</div>
 			<div class="dropdown dropdown-end ml-10 md:ml-2">
 				<button tabindex="0" class="btn btn-ghost btn-circle">
@@ -46,8 +47,8 @@
 				<ul
 					class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
 				>
-					<li><button data-set-theme="light" data-act-class="ACTIVECLASS">🌞 Light</button></li>
-					<li><button data-set-theme="dark" data-act-class="ACTIVECLASS">🌚 Dark</button></li>
+					<li><button data-set-theme="light" data-act-class="ACTIVECLASS">🌞 {$_('light')}</button></li>
+					<li><button data-set-theme="dark" data-act-class="ACTIVECLASS">🌚 {$_('dark')}</button></li>
 				</ul>
 			</div>
 		{:else}
@@ -70,8 +71,8 @@
 					tabindex="0"
 					class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
 				>
-					<li><a href="/my/settings">Ajuste</a></li>
-					<li><a data-sveltekit-reload href="/logout">Cerrar sesion</a></li>
+					<li><a href="/my/settings">{$_('settings')}</a></li>
+					<li><a data-sveltekit-reload href="/logout">{$_('logout')}</a></li>
 				</ul>
 			</div>
 			<div class="dropdown dropdown-end ml-2">
@@ -94,8 +95,8 @@
 				<ul
 					class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
 				>
-					<li><button data-set-theme="light" data-act-class="ACTIVECLASS">🌞 Light</button></li>
-					<li><button data-set-theme="dark" data-act-class="ACTIVECLASS">🌚 Dark</button></li>
+					<li><button data-set-theme="light" data-act-class="ACTIVECLASS">🌞 {$_('light')}</button></li>
+					<li><button data-set-theme="dark" data-act-class="ACTIVECLASS">🌚 {$_('dark')}</button></li>
 				</ul>
 			</div>
 		{/if}
@@ -103,7 +104,3 @@
 </header>
 <Toaster />
 <slot />
-
-<style>
-	/* Add any custom styles here if needed */
-</style>

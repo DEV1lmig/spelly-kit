@@ -1,15 +1,16 @@
 <script>
 	import { page } from '$app/stores';
+    import { _ } from 'svelte-i18n';
 	const navigation = [
 		{
-			title: 'Perfil',
+			title: $_('profile'),
 			href: '/my/settings/profile'
 		}
 	];
 </script>
 
 <div class="md:max-w-lg w-32 min-h-auto m-auto pt-20">
-	<h3 class="text-2xl font-medium">Ajustes</h3>
+	<h3 class="text-2xl font-medium">{$_('settings')}</h3>
 	<div class="divider mb-1" />
 </div>
 <div class="flex flex-col justify-center items-center w-full h-auto space-x-4 ">

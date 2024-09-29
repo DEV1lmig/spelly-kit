@@ -5,6 +5,7 @@
 	import { getImageURL } from '$lib/utils';
     import toast from 'svelte-french-toast';
 	import Input from '$lib/components/Input.svelte';
+    import { _ } from 'svelte-i18n';
 
 	export let data;
 	let loading;
@@ -48,10 +49,10 @@
 		enctype="multipart/form-data"
 		use:enhance={submitUpdateProfile}
 	>
-		<h3 class="text-2xl font-medium">Actualizar perfil</h3>
+		<h3 class="text-2xl font-medium">{$_('updateProfile')}</h3>
 		<div class="form-control max-w-lg">
 			<label for="avatar" class="label font-medium pb-1">
-				<span class="label-text">Foto de perfil</span>
+				<span class="label-text">{$_('profilePic')}</span>
 			</label>
 			<label for="avatar" class="avatar w-32 rounded-full hover:cursor-pointer">
 				<label for="avatar" class="absolute -bottom-0.5 -right-0.5 hover:cursor-pointer">
@@ -80,10 +81,10 @@
 				disabled={loading}
 			/>
 		</div>
-		<Input id="username" label="Nombre de usuario" value={data?.user?.username} disabled={loading} />
+		<Input id="username" label="{$_('userName')}" value={data?.user?.username} disabled={loading} />
 		<div class="w-full max-w-lg pt-3">
 			<button class="btn btn-primary w-full max-w-lg" type="submit" disabled={loading}>
-				Actualizar
+				{$_('update')}
 			</button>
 		</div>
 	</form>
