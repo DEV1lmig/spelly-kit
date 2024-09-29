@@ -3,7 +3,8 @@
 	import { invalidateAll } from '$app/navigation';
 	import { Icon, Pencil } from 'svelte-hero-icons';
 	import { getImageURL } from '$lib/utils';
-	import Input from '../../../Input.svelte';
+    import toast from 'svelte-french-toast';
+	import Input from '$lib/components/Input.svelte';
 
 	export let data;
 	let loading;
@@ -26,8 +27,10 @@
 			switch (result.type) {
 				case 'success':
 					await invalidateAll();
+                    toast.success('Perfil actualizado correctamente');
 					break;
 				case 'error':
+                    toast.error('Error al actualizar el perfil');
 					break;
 				default:
 					await applyAction(result);

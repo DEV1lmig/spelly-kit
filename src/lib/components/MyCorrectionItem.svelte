@@ -1,7 +1,7 @@
 <script>
   import { enhance } from '$app/forms'
 	import Modal from './Modal.svelte';
-  
+
   export let correction
 
   let modalOpen;
@@ -11,7 +11,7 @@
 
 <div class="w-full h-20 flex items-center justify-between">
   <div class="flex flex-col w-full ml-4 h-full justify-center">
-      <a href="/corrections/{correction.id}" class="font-semibold text-lg">{correction.content}</a>
+      <a href="/corrections/{correction.id}" class="font-semibold text-lg">{correction.text}</a>
   </div>
   <div class="flex items-center justify-end w-full">
       <Modal label={correction.id} checked={modalOpen}>

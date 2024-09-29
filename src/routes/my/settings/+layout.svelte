@@ -8,7 +8,7 @@
 	];
 </script>
 
-<div class="max-w-lg h-auto m-auto pt-4">
+<div class="md:max-w-lg w-32 min-h-auto m-auto pt-20">
 	<h3 class="text-2xl font-medium">Ajustes</h3>
 	<div class="divider mb-1" />
 </div>

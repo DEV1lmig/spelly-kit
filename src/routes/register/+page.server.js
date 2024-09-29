@@ -18,13 +18,13 @@ export const actions = {
 		try {
 			//create the user
 			const result = await locals.userPb.collection('users').create(formData);
-			//console.log('result',result);
+			await locals.userPb.collection('users').requestVerification(formData.email);
 			if (result) createResult = true;
 		} catch (err) {
 			console.log('error', err);
 			throw error(500, 'Algo fue mal durante la ejecucion');
 		} finally {
-			if (createResult) throw redirect(303, '/login');
+			if (createResult) throw redirect(303, '/login?verifyEmail=true');
 		}
 	}
 };

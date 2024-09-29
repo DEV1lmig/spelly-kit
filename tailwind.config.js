@@ -1,33 +1,100 @@
-/** @type {import('tailwindcss').Config} */
 export default {
 	content: ['./src/**/*.{html,js,svelte,ts}'],
 	theme: {
-		extend: {}
+		extend: {
+			colors: {
+				'base-50': 'oklch(var(--base-100) / <alpha-value>)'
+			}
+		}
 	},
 	daisyui: {
 		themes: [
 			{
-				spelly: {
-					primary: '#007bff', // A sleek blue as primary
-					secondary: '#6c757d', // A subtle gray for secondary
-					accent: '#28a745', // A vibrant green for accents
-					neutral: '#f8f9fa', // A clean, light neutral
-					'base-100': '#ffffff', // Pure white for base
-					info: '#17a2b8', // A calming blue for info
-					success: '#28a745', // Same as accent for consistency
-					warning: '#ffc107', // A standard yellow for warning
-					error: '#dc3545' // A bold red for error
+				light: {
+					...require('daisyui/src/theming/themes')['light'],
+
+					primary: '#00ccff',
+
+					'primary-content': '#000f16',
+
+					secondary: '#ff1700',
+
+					'secondary-content': '#160000',
+
+					accent: '#00e4ea',
+
+					'accent-content': '#001213',
+
+					neutral: '#352328',
+
+					'neutral-content': '#d3cecf',
+
+					'base-100': '#ffffff',
+
+					'base-200': '#dedede',
+
+					'base-300': '#bebebe',
+
+					'base-content': '#161616',
+
+					info: '#00dcff',
+
+					'info-content': '#001116',
+
+					success: '#00c962',
+
+					'success-content': '#000f03',
+
+					warning: '#925f00',
+
+					'warning-content': '#e9ded0',
+
+					error: '#c5003a',
+
+					'error-content': '#fad5d5'
 				},
-				darkspelly: {
-					primary: '#007bff', // Maintain primary blue in dark mode
-					secondary: '#343a40', // A darker gray for secondary
-					accent: '#28a745', // Maintain accent green
-					neutral: '#121212', // A deep, dark neutral
-					'base-100': '#181818', // A dark gray for base
-					info: '#17a2b8', // Maintain info blue
-					success: '#28a745', // Maintain accent green
-					warning: '#ffc107', // Maintain warning yellow
-					error: '#dc3545' // Maintain error red
+				dark: {
+					...require('daisyui/src/theming/themes')['dark'],
+
+					primary: '#4572a7',
+
+					'primary-content': '#f3f4f6',
+
+					secondary: '#AA4643',
+
+					'secondary-content': '#f3f4f6',
+
+					accent: '#00e4ea',
+
+					'accent-content': '#f3f4f6',
+
+					neutral: '#352328',
+
+					'neutral-content': '#d3cecf',
+
+					'base-100': '#15171b',
+
+					'base-200': '#1d1e26',
+
+					'base-300': '#282a36',
+
+					'base-content': '#f3f4f6',
+
+					info: '#00dcff',
+
+					'info-content': '#f3f4f6',
+
+					success: '#00c962',
+
+					'success-content': '#f3f4f6',
+
+					warning: '#db843d',
+
+					'warning-content': '#e9ded0',
+
+					error: '#c5003a',
+
+					'error-content': '#fad5d5'
 				}
 			}
 		]
