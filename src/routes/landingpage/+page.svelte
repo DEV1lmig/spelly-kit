@@ -107,28 +107,6 @@
       </div>
     </section>
 
-    <section class="py-20 bg-base-200 -z-10">
-      <div class="container mx-auto px-4">
-        <h2 class="text-3xl font-bold text-center mb-12">{$_('seeSpellyInAction')}</h2>
-        <div class="flex flex-col items-center space-y-6 max-w-md mx-auto">
-          <p class="text-center text-lg">
-            {$_('seeSpellyInActionDescription')}
-          </p>
-          <input
-            type="text"
-            placeholder="{$_('placeholderSpeech')}"
-            class="input input-bordered w-full text-lg"
-            bind:value={inputText}
-          />
-          <button on:click={correctGrammar} class="btn btn-primary w-full text-lg">{$_('correctGrammar')}</button>
-          <div class="alert alert-success w-full">
-            <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-            <span class="text-lg">{correctedText || $_('correctedSentenceWillAppearHere')}</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <section class="py-20 bg-primary text-primary-content w-full -z-10">
       <div class="container mx-auto px-4">
         <div class="text-center">
