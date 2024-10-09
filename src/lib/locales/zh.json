@@ -52,5 +52,19 @@
   "sellSpeech": "输入一些文本，看看Spelly如何实时更正它。",
   "readyToPerfectYourEnglish": "准备好提高您的英语水平了吗？",
   "joinThousandsOfUsers": "加入数千名正在使用Spelly提高英语语法水平的用户。",
-  "signUpForFree": "免费注册"
+  "signUpForFree": "免费注册",
+  "errors": {
+    "email": {
+        "required": "邮箱是必需的",
+         "invalid": "邮箱无效"
+    },
+    "password": {
+        "required": "密码是必需的",
+        "minLength": "密码必须至少有6个字符"
+    },
+    "username": {
+        "required": "用户名是必需的",
+        "minLength": "用户名必须至少有3个字符"
+    }
+  }
   }

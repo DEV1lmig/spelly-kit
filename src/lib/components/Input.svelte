@@ -1,4 +1,5 @@
 <script>
+    import { _ } from 'svelte-i18n';
 	export let value = '';
 	export let placeholder = '';
 	export let id;
@@ -30,7 +31,7 @@
 		{#each errors as error}
 			<label for={id} class="label py-0 pt-1">
 				<span class="label-text-alt text-error">
-					{error}
+					{$_(`errors.${id}.${error}`)}
 				</span>
 			</label>
 		{/each}

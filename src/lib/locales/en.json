@@ -53,5 +53,19 @@
   "sellSpeech": "Perfect your english with Spelly",
   "readyToPerfectYourEnglish": "Ready to Perfect Your English?",
   "joinThousandsOfUsers": "Join thousands of users who are improving their English grammar with Spelly.",
-  "signUpForFree": "Sign Up for Free"
+  "signUpForFree": "Sign Up for Free",
+  "errors": {
+    "email": {
+      "required": "Email is required",
+      "invalid": "Invalid email address"
+    },
+    "password": {
+      "required": "Password is required",
+      "minLength": "Password must be at least 8 characters long"
+    },
+    "username": {
+      "required": "Username is required",
+      "minLength": "Username must be at least 3 characters long"
+    }
+  }
   }
