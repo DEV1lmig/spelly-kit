@@ -43,28 +43,30 @@
     "keyFeatures": "主要功能",
     "getStarted": "开始",
     "learnMore": "了解更多",
-  "realTimeCorrections": "实时更正",
-  "realTimeCorrectionDescription": "在您键入时即时获得语法反馈。",
-  "naturalConversations": "自然对话",
-  "naturalConversationsDescription": "在提高英语技能的同时自然地进行对话。",
-  "aiPoweredAccuracy": "人工智能驱动的准确性",
-  "aiPoweredAccuracyDescription": "利用先进的人工智能获得精确的语法更正。",
-  "sellSpeech": "输入一些文本，看看Spelly如何实时更正它。",
-  "readyToPerfectYourEnglish": "准备好提高您的英语水平了吗？",
-  "joinThousandsOfUsers": "加入数千名正在使用Spelly提高英语语法水平的用户。",
-  "signUpForFree": "免费注册",
-  "errors": {
-    "email": {
-        "required": "邮箱是必需的",
-         "invalid": "邮箱无效"
-    },
-    "password": {
-        "required": "密码是必需的",
-        "minLength": "密码必须至少有6个字符"
-    },
-    "username": {
-        "required": "用户名是必需的",
-        "minLength": "用户名必须至少有3个字符"
+    "realTimeCorrections": "实时更正",
+    "realTimeCorrectionDescription": "在您键入时即时获得语法反馈。",
+    "naturalConversations": "自然对话",
+    "naturalConversationsDescription": "在提高英语技能的同时自然地进行对话。",
+    "aiPoweredAccuracy": "人工智能驱动的准确性",
+    "aiPoweredAccuracyDescription": "利用先进的人工智能获得精确的语法更正。",
+    "sellSpeech": "输入一些文本，看看Spelly如何实时更正它。",
+    "readyToPerfectYourEnglish": "准备好提高您的英语水平了吗？",
+    "joinThousandsOfUsers": "加入数千名正在使用Spelly提高英语语法水平的用户。",
+    "signUpForFree": "免费注册",
+    "errors": {
+        "email": {
+            "required": "邮箱是必需的",
+            "invalid": "邮箱无效"
+        },
+        "password": {
+            "required": "密码是必需的",
+            "minLength": "密码必须至少有6个字符",
+            "match": "密码和确认密码必须匹配"
+        },
+        "username": {
+            "required": "用户名是必需的",
+            "minLength": "用户名必须至少有5个字符",
+            "maxLength": "用户名必须少于17个字符"
+        }
     }
-  }
-  }
+}
