@@ -60,7 +60,12 @@
         },
         "password": {
             "required": "密码是必需的",
-            "minLength": "密码必须至少有6个字符",
+            "requirements": "密码必须至少8个字符，包含一个大写字母，一个小写字母，两个数字和一个特殊字符",
+            "match": "密码和确认密码必须匹配"
+        },
+        "passwordConfirm": {
+            "required": "密码是必需的",
+            "requirements": "密码必须至少8个字符，包含一个大写字母，一个小写字母，两个数字和一个特殊字符",
             "match": "密码和确认密码必须匹配"
         },
         "username": {

@@ -61,8 +61,12 @@
         },
         "password": {
             "required": "La contraseña es obligatoria",
-            "minLength": "La contraseña debe tener al menos 8 caracteres",
+            "requirements": "La contraseña debe tener al menos 8 caracteres, una mayúscula, una minúscula, dos números y un carácter especial",
             "match": "La contraseña y la confirmación deben coincidir"
+        },
+        "passwordConfirm": {
+            "required": "La confirmación de contraseña es obligatoria",
+            "requirements": "La confirmación contraseña debe tener al menos 8 caracteres, una mayúscula, una minúscula, dos números y un carácter especial"
         },
         "username": {
             "required": "El nombre de usuario es obligatorio",

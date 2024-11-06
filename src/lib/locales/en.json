@@ -61,8 +61,12 @@
         },
         "password": {
             "required": "Password is required",
-            "minLength": "Password must be at least 8 characters long",
+            "requirements": "Password must be at least 8 characters long, contain one uppercase letter, one lowercase letter, two numbers and one special character",
             "match": "Password and confirmation must match"
+        },
+        "passwordConfirm": {
+            "required": "Confirm password is required",
+            "requirements": "Confirm password must be at least 8 characters long, contain one uppercase letter, one lowercase letter, two numbers and one special character"
         },
         "username": {
             "required": "Username is required",

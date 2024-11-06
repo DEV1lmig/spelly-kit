@@ -32,7 +32,7 @@ export const loginUserSchema = z.object({
       passwordConfirm: z
         .string({ required_error: 'errors.passwordConfirm.required' })
         .regex(/^(?=.*[A-Z])(?=.*[.!@#$&*])(?=.*[0-9].*[0-9])(?=.*[a-z]).{8,}$/, {
-          message: 'errors.password.requirements'
+          message: 'errors.passwordConfirm.requirements'
         }),
     username: z
       .string()
