@@ -31,7 +31,7 @@
 		{#each errors as error}
 			<label for={id} class="label py-0 pt-1">
 				<span class="label-text-alt text-error">
-					{$_(`errors.${id}.${error}`)}
+					{$_(error)}
 				</span>
 			</label>
 		{/each}
